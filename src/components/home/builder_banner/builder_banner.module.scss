@@ -1,0 +1,163 @@
+.section {
+  overflow: hidden;
+  padding: 120px 0;
+
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  max-width: 1400px;
+  min-height: 500px;
+
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.visual {
+  position: relative;
+
+  height: 420px;
+}
+
+.circle {
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid #333;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 60px rgba(255, 255, 255, 0.015),
+    0 0 0 120px rgba(255, 255, 255, 0.01);
+}
+
+.circle::before,
+.circle::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 40px;
+
+  border: 1px dashed #292929;
+  border-radius: 50%;
+}
+
+.circle::after {
+  inset: 100px;
+}
+
+.visual span {
+  position: absolute;
+
+  padding: 10px 14px;
+
+  border: 1px solid #333;
+
+  background: #111;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.cpu {
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gpu {
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ram {
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ssd {
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.content {
+  max-width: 600px;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 25px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #666;
+}
+
+.content h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 5vw, 76px);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.content h2 span {
+  color: #777;
+}
+
+.content p {
+  max-width: 500px;
+  margin: 32px 0;
+
+  color: #888;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.content a {
+  display: inline-flex;
+
+  padding: 15px 22px;
+
+  background: #fff;
+  color: #000;
+
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    height: 350px;
+  }
+
+  .content h2 {
+    font-size: 48px;
+  }
+}

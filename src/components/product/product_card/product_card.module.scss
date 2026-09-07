@@ -1,0 +1,114 @@
+.card {
+  min-width: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  display: block;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: #f4f4f4;
+}
+
+.badge {
+  position: absolute;
+  z-index: 2;
+
+  top: 14px;
+  left: 14px;
+
+  padding: 7px 10px;
+
+  background: #111;
+  color: #fff;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.image {
+  object-fit: contain;
+  padding: 30px;
+
+  transition: transform 300ms ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+.content {
+  padding: 18px 2px;
+}
+
+.category {
+  display: block;
+  margin-bottom: 7px;
+
+  font-size: 10px;
+  font-weight: 700;
+  color: #999;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.name {
+  display: block;
+
+  min-height: 42px;
+
+  color: #111;
+
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 15px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid #ddd;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #111;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    background 150ms ease,
+    color 150ms ease;
+
+  &:hover {
+    background: #111;
+    color: #fff;
+  }
+}

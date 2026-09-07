@@ -1,0 +1,154 @@
+.section {
+  padding: 110px 0;
+  background: #f5f5f3;
+  color: #0a0a0a;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 12px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #888;
+}
+
+.header h2 {
+  margin: 0;
+
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.header > a {
+  color: #111;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.card {
+  position: relative;
+
+  min-height: 250px;
+  padding: 28px;
+
+  overflow: hidden;
+
+  background: #fff;
+  color: #111;
+
+  text-decoration: none;
+
+  transition:
+    transform 200ms ease,
+    background 200ms ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    background: #ebebeb;
+  }
+}
+
+.code {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #aaa;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 105px;
+  height: 105px;
+
+  margin-top: 15px;
+
+  border: 1px solid #ddd;
+  border-radius: 50%;
+
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+
+  color: #333;
+}
+
+.info {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-top: 35px;
+}
+
+.info h3 {
+  margin: 0;
+
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.info span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #777;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 70px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .header {
+    align-items: flex-start;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .header h2 {
+    font-size: 38px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
