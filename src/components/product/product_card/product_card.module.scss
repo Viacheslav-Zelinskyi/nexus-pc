@@ -4,12 +4,10 @@
 
 .imageWrapper {
   position: relative;
-  display: block;
-
+  width: 100%;
   aspect-ratio: 1 / 1;
-
   overflow: hidden;
-
+  display: block;
   background: #f4f4f4;
 }
 

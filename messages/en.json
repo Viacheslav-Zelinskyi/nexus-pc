@@ -1,0 +1,67 @@
+{
+  "header": {
+    "logo": "NEXUS",
+    "catalog": "Catalog",
+    "builder": "PC Builder",
+    "deals": "Deals",
+    "search": "Search",
+    "account": "Account",
+    "cart": "Cart",
+    "language": "Language"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "NEXUS PC / COMPONENTS",
+      "title": "Build your <accent>next PC.</accent>",
+      "subtitle": "High-performance components for gaming, creation and everything in between.",
+      "primaryCta": "Build your PC",
+      "secondaryCta": "Shop components",
+      "gpuLogo": "NEXUS",
+      "stats": {
+        "components": "Components",
+        "dispatch": "Fast dispatch",
+        "genuine": "Genuine"
+      },
+      "featured": {
+        "label": "FEATURED",
+        "series": "RTX SERIES"
+      }
+    }
+  },
+  "plp": {
+    "eyebrow": "CATALOG",
+    "title": "PC Components"
+  },
+  "filters": {
+    "categories": "Categories",
+    "brand": "Brand",
+    "price": "Price",
+    "from": "From",
+    "to": "To",
+    "categoryList": [
+      "All components",
+      "GPU",
+      "CPU",
+      "Motherboards",
+      "RAM",
+      "Storage",
+      "Power Supplies",
+      "Cooling"
+    ]
+  },
+  "toolbar": {
+    "showing": "Showing",
+    "items": "items",
+    "sortBy": "Sort by:",
+    "sortOptions": {
+      "popular": "Most Popular",
+      "cheap": "Price: Low to High",
+      "expensive": "Price: High to Low",
+      "newest": "Newest Arrivals"
+    }
+  },
+  "metadata": {
+    "title": "NEXUS PC",
+    "description": "High-performance components for gaming, creation and everything in between."
+  }
+}

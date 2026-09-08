@@ -1,49 +1,56 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import styles from "./hero.module.scss";
+import Image from "next/image";
+import { GPUCanvas } from "../gpu_canvas";
 
 export function Hero() {
+  const t = useTranslations("home.hero");
+
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <span className={styles.eyebrow}>NEXUS PC / COMPONENTS</span>
+          <span className={styles.eyebrow}>{t("eyebrow")}</span>
 
           <h1>
-            Build your
-            <br />
-            <span>next PC.</span>
+            {t.rich("title", {
+              accent: (chunks) => (
+                <>
+                  <br />
+                  <span className={styles.accent}>{chunks}</span>
+                </>
+              ),
+            })}
           </h1>
 
-          <p>
-            High-performance components for gaming, creation and everything in
-            between.
-          </p>
+          <p>{t("subtitle")}</p>
 
           <div className={styles.actions}>
             <Link href="/builder" className={styles.primaryButton}>
-              Build your PC
+              {t("primaryCta")}
             </Link>
 
             <Link href="/products" className={styles.secondaryButton}>
-              Shop components
+              {t("secondaryCta")}
             </Link>
           </div>
 
           <div className={styles.stats}>
             <div>
               <strong>500+</strong>
-              <span>Components</span>
+              <span>{t("stats.components")}</span>
             </div>
 
             <div>
               <strong>24h</strong>
-              <span>Fast dispatch</span>
+              <span>{t("stats.dispatch")}</span>
             </div>
 
             <div>
               <strong>100%</strong>
-              <span>Genuine</span>
+              <span>{t("stats.genuine")}</span>
             </div>
           </div>
         </div>
@@ -52,19 +59,7 @@ export function Hero() {
           <div className={styles.glow} />
 
           <div className={styles.productVisual}>
-            <div className={styles.gpuShape}>
-              <div className={styles.gpuLogo}>NEXUS</div>
-              <div className={styles.gpuFans}>
-                <span />
-                <span />
-                <span />
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.visualLabel}>
-            <span>FEATURED</span>
-            <strong>RTX SERIES</strong>
+            <GPUCanvas />
           </div>
         </div>
       </div>
