@@ -111,8 +111,16 @@ export type ShopifyVendor = {
   description: string;
 };
 
+type ShopifyVendorMetaobject = {
+  handle: string;
+  fields: {
+    key: string;
+    value: string;
+  }[];
+};
+
 interface VendorResponse {
-  metaobject: ShopifyVendor | null;
+  metaobject: ShopifyVendorMetaobject | null;
 }
 
 export type ShopifyCollection = {
