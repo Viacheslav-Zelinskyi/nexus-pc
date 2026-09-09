@@ -1,51 +1,17 @@
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-
-
 import { ProductCard } from "@/components/product/product_card";
 import { ProductGallery } from "@/components/product/product_gallery";
 import { ProductInfo } from "@/components/product/product_info";
 import { Link } from "@/i18n/navigation";
-import { type ShopifyProductDetail, getProduct, getProducts } from "@/lib/shopify/products";
-
-
+import {
+  type ShopifyProductDetail,
+  getProduct,
+  getProducts,
+} from "@/lib/shopify/products";
 
 import styles from "./product.module.scss";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default async function ProductPage({
   params,

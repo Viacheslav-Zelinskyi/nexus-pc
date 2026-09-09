@@ -16,7 +16,7 @@ interface VariantOption {
 
 interface Variant {
   id: string;
-  title: string;
+  title?: string;
   availableForSale: boolean;
   price: { amount: string; currencyCode: string };
   selectedOptions: VariantOption[];
