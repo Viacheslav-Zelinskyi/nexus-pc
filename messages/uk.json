@@ -87,6 +87,22 @@
     "vendorTitle": "{vendor}",
     "vendorDescription": "Товари від {vendor}"
   },
+  "pdp": {
+    "breadcrumbLabel": "Навігація",
+    "breadcrumbHome": "Головна",
+    "breadcrumbCatalog": "Каталог",
+    "availabilityInStock": "В наявності",
+    "availabilityOutOfStock": "Немає в наявності",
+    "decreaseQuantity": "Зменшити кількість",
+    "increaseQuantity": "Збільшити кількість",
+    "addToCart": "Додати до кошика",
+    "added": "Додано",
+    "outOfStock": "Немає в наявності",
+    "descriptionTitle": "Опис",
+    "shippingTitle": "Доставка та повернення",
+    "shippingText": "Замовлення відправляються протягом 2–3 робочих днів. Безкоштовне повернення протягом 30 днів після доставки.",
+    "relatedTitle": "Вам також може сподобатися"
+  },
   "filters": {
     "categoriesTitle": "Категорії",
     "brandTitle": "Бренд",

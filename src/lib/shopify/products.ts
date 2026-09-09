@@ -81,6 +81,54 @@ const VENDOR_QUERY = `
   }
 `;
 
+const PRODUCT_QUERY = `
+  query GetProduct($handle: String!) {
+    product(handle: $handle) {
+      id
+      handle
+      title
+      vendor
+      descriptionHtml
+
+      featuredImage {
+        url
+        altText
+        width
+        height
+      }
+
+      images(first: 8) {
+        nodes {
+          url
+          altText
+          width
+          height
+        }
+      }
+
+      options {
+        name
+        values
+      }
+
+      variants(first: 50) {
+        nodes {
+          id
+          availableForSale
+          price {
+            amount
+            currencyCode
+          }
+          selectedOptions {
+            name
+            value
+          }
+        }
+      }
+    }
+  }
+`;
+
 export type ShopifyProduct = {
   id: string;
   handle: string;
@@ -102,6 +150,42 @@ export type ShopifyProduct = {
         currencyCode: string;
       };
     }[];
+  };
+};
+
+export type ShopifyProductImage = {
+  url: string;
+  altText: string | null;
+  width: number;
+  height: number;
+};
+
+export type ShopifyProductOption = {
+  name: string;
+  values: string[];
+};
+
+export type ShopifyProductVariant = {
+  id: string;
+  availableForSale: boolean;
+  price: {
+    amount: string;
+    currencyCode: string;
+  };
+  selectedOptions: {
+    name: string;
+    value: string;
+  }[];
+};
+
+export type ShopifyProductDetail = Omit<ShopifyProduct, "variants"> & {
+  descriptionHtml: string;
+  images: {
+    nodes: ShopifyProductImage[];
+  };
+  options: ShopifyProductOption[];
+  variants: {
+    nodes: ShopifyProductVariant[];
   };
 };
 
@@ -143,6 +227,10 @@ interface CollectionResponse {
   collection: ShopifyCollection | null;
 }
 
+interface ProductResponse {
+  product: ShopifyProductDetail | null;
+}
+
 export async function getProducts(
   first = 4,
   query?: string
@@ -172,6 +260,16 @@ export async function getCollection(
   });
 
   return data.collection;
+}
+
+export async function getProduct(
+  handle: string
+): Promise<ShopifyProductDetail | null> {
+  const data = await shopifyFetch<ProductResponse>(PRODUCT_QUERY, {
+    handle,
+  });
+
+  return data.product;
 }
 
 export async function getVendor(handle: string): Promise<ShopifyVendor | null> {

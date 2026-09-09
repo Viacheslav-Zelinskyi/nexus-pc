@@ -1,0 +1,171 @@
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.title {
+  margin: 0 0 14px;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+
+  @include smallMobile {
+    font-size: 26px;
+  }
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 32px;
+
+  &::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+}
+
+.inStock {
+  color: #1a7d3a;
+
+  &::before {
+    background: #1a7d3a;
+  }
+}
+
+.outOfStock {
+  color: #b3261e;
+
+  &::before {
+    background: #b3261e;
+  }
+}
+
+/* --- Variant options (reuses the PLP filter-button vocabulary) --- */
+.optionGroup {
+  margin-bottom: 24px;
+
+  h3 {
+    margin: 0 0 12px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #666;
+  }
+}
+
+.optionValues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.optionBtn {
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #111;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+
+  &:hover {
+    border-color: #111;
+  }
+
+  &.activeOption {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+  }
+}
+
+/* --- Quantity + add to cart --- */
+.purchaseRow {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0 36px;
+
+  @include smallMobile {
+    flex-direction: column;
+  }
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+
+  button {
+    width: 40px;
+    height: 48px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 150ms ease;
+
+    &:hover {
+      background: #eee;
+    }
+  }
+
+  span {
+    min-width: 32px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
+
+.addToCart {
+  flex: 1;
+  height: 48px;
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+
+  &:hover:not(:disabled) {
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    background: #ccc;
+    border-color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+.accordion {
+  border-top: 1px solid #ddd;
+  margin-top: 8px;
+}

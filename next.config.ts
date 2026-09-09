@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
+import path from "path";
+
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -11,7 +13,11 @@ const nextConfig: NextConfig = {
     ],
   },
   sassOptions: {
-    additionalData: `@use "@/styles/variables" as *; @use "@/styles/mixins" as *;`,
+    includePaths: [path.join(process.cwd(), "src")],
+    additionalData: `
+      @use "@/styles/variables" as *;
+      @use "@/styles/mixins" as *;
+    `,
   },
 };
 

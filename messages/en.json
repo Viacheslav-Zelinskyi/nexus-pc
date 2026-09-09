@@ -87,6 +87,22 @@
     "vendorTitle": "{vendor}",
     "vendorDescription": "Products from {vendor}"
   },
+  "pdp": {
+    "breadcrumbLabel": "Breadcrumb",
+    "breadcrumbHome": "Home",
+    "breadcrumbCatalog": "Catalog",
+    "availabilityInStock": "In stock",
+    "availabilityOutOfStock": "Out of stock",
+    "decreaseQuantity": "Decrease quantity",
+    "increaseQuantity": "Increase quantity",
+    "addToCart": "Add to cart",
+    "added": "Added",
+    "outOfStock": "Out of stock",
+    "descriptionTitle": "Description",
+    "shippingTitle": "Shipping & returns",
+    "shippingText": "Orders ship within 2–3 business days. Free returns within 30 days of delivery.",
+    "relatedTitle": "You might also like"
+  },
   "filters": {
     "categoriesTitle": "Categories",
     "brandTitle": "Brand",

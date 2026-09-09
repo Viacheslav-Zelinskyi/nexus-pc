@@ -1,0 +1,90 @@
+.pageWrapper {
+  min-height: 100vh;
+  background: #f5f5f3;
+  color: #111;
+}
+
+.container {
+  @include container;
+  max-width: 1400px;
+}
+
+.main {
+  padding: 40px 0 110px;
+}
+
+/* --- Breadcrumbs --- */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 36px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #888;
+
+  @include smallMobile {
+    flex-wrap: wrap;
+  }
+}
+
+.breadcrumbSep {
+  color: #ccc;
+}
+
+.breadcrumbCurrent {
+  color: #111;
+}
+
+/* --- Main layout: gallery + info --- */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 60px;
+  align-items: start;
+
+  @include tablet {
+    grid-template-columns: 1fr 380px;
+    gap: 32px;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* --- Related products --- */
+.related {
+  margin-top: 120px;
+  border-top: 1px solid #ddd;
+  padding-top: 48px;
+
+  @include mobile {
+    margin-top: 72px;
+  }
+}
+
+.relatedTitle {
+  margin: 0 0 28px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #666;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include smallMobile {
+    grid-template-columns: 1fr;
+  }
+}
