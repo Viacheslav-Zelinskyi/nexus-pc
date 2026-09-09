@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 
 import { useTranslations } from "next-intl";
 
+import { useCart } from "@/context/CartContext";
+
 import { AccordionItem } from "./accordion_item";
 import styles from "./product_info.module.scss";
 
@@ -14,9 +16,17 @@ interface VariantOption {
 
 interface Variant {
   id: string;
+  title: string;
   availableForSale: boolean;
   price: { amount: string; currencyCode: string };
   selectedOptions: VariantOption[];
+  image?: {
+    url: string;
+    altText?: string;
+  };
+  product?: {
+    handle: string;
+  };
 }
 
 interface Option {
@@ -39,6 +49,7 @@ interface ProductInfoProps {
 }
 
 export function ProductInfo({ product }: ProductInfoProps) {
+  const { addItem } = useCart();
   const t = useTranslations("pdp");
 
   const [selected, setSelected] = useState<Record<string, string>>(() => {
@@ -74,10 +85,13 @@ export function ProductInfo({ product }: ProductInfoProps) {
   function handleAddToCart() {
     if (!available || !activeVariant) return;
 
-    // TODO: wire up to the real cart mutation, e.g. lib/shopify/cart.ts
-    // addToCart(activeVariant.id, quantity)
-    console.log("add to cart", {
+    addItem({
       variantId: activeVariant.id,
+      title: product.title,
+      variantTitle: activeVariant.title,
+      handle: activeVariant.product?.handle ?? product.handle,
+      price: activeVariant.price,
+      image: activeVariant.image,
       quantity,
     });
 

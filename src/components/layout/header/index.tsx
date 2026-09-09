@@ -1,11 +1,18 @@
-import { Link } from "@/i18n/navigation";
+"use client";
+
 import { useTranslations } from "next-intl";
+
+import { useCart } from "@/context/CartContext";
+import { Link } from "@/i18n/navigation";
 
 import styles from "./header.module.scss";
 import { LanguageSwitcher } from "./language_switcher";
 
 export function Header() {
   const t = useTranslations("header");
+  const { cart, toggleCart } = useCart();
+
+  const totalQuantity = cart?.totalQuantity || 0;
 
   return (
     <header className={styles.header}>
@@ -56,8 +63,8 @@ export function Header() {
             </svg>
           </Link>
 
-          <Link
-            href="/cart"
+          <button
+            onClick={toggleCart}
             className={styles.iconButton}
             aria-label={t("cart")}
           >
@@ -73,8 +80,10 @@ export function Header() {
               <path d="M3 6h18" />
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
-            <span className={styles.cartBadge}>2</span>
-          </Link>
+            {totalQuantity > 0 && (
+              <span className={styles.cartBadge}>{totalQuantity}</span>
+            )}
+          </button>
         </div>
       </div>
     </header>

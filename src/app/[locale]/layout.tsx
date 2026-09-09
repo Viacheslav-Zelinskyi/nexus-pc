@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
+import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
-import { Locales, routing } from "@/i18n/routing";
 
 import { Header } from "@/components/layout/header";
+import { MiniCart } from "@/components/layout/mini_cart";
+import { CartProvider } from "@/context/CartContext";
+import { Locales, routing } from "@/i18n/routing";
 
 import "../globals.scss";
 
@@ -61,8 +63,11 @@ export default async function LocaleLayout({
     >
       <body>
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          {children}
+          <CartProvider>
+            <Header />
+            <MiniCart />
+            {children}
+          </CartProvider>
         </NextIntlClientProvider>
       </body>
     </html>

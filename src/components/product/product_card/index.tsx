@@ -50,13 +50,14 @@ export function ProductCard({ product }: ProductCardProps) {
             ${product.price.toLocaleString()}
           </span>
 
-          <button
+          <Link
+            href={`/product/${product.handle}`}
             type="button"
             aria-label={`Add ${product.name} to cart`}
             className={styles.addButton}
           >
             +
-          </button>
+          </Link>
         </div>
       </div>
     </article>
