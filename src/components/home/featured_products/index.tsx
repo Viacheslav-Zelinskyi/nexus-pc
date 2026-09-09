@@ -1,10 +1,14 @@
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
-import { ProductCard } from "@/components/product/product_card";
 
-import styles from "./featured_products.module.scss";
+import { ProductCard } from "@/components/product/product_card";
 import { getProducts } from "@/lib/shopify/products";
 
+import styles from "./featured_products.module.scss";
+
 export async function FeaturedProducts() {
+  const t = await getTranslations("home.featuredProducts");
+
   const products = await getProducts(4);
 
   return (
@@ -12,12 +16,12 @@ export async function FeaturedProducts() {
       <div className={styles.container}>
         <div className={styles.header}>
           <div>
-            <span className={styles.eyebrow}>NEXUS SELECTED</span>
+            <span className={styles.eyebrow}>{t("eyebrow")}</span>
 
-            <h2>Featured components</h2>
+            <h2>{t("title")}</h2>
           </div>
 
-          <Link href="/products">View all →</Link>
+          <Link href="/products">{t("viewAll")}</Link>
         </div>
 
         <div className={styles.grid}>

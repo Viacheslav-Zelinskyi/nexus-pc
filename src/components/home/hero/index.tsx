@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
-import styles from "./hero.module.scss";
-import Image from "next/image";
 import { GPUCanvas } from "../gpu_canvas";
+import styles from "./hero.module.scss";
 
 export function Hero() {
   const t = useTranslations("home.hero");

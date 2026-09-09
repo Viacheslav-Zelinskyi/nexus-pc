@@ -1,20 +1,29 @@
+import { getTranslations } from "next-intl/server";
+
 import styles from "./toolbar.module.scss";
 
 interface ToolbarProps {
   totalItems: number;
 }
 
-export function Toolbar({ totalItems }: ToolbarProps) {
+const SORT_KEYS = ["popularity", "priceAsc", "priceDesc", "newest"] as const;
+
+export async function Toolbar({ totalItems }: ToolbarProps) {
+  const t = await getTranslations("toolbar");
+
   return (
     <div className={styles.toolbar}>
-      <span className={styles.resultsCount}>Показано {totalItems} товарів</span>
+      <span className={styles.resultsCount}>
+        {t("resultsCount", { count: totalItems })}
+      </span>
       <div className={styles.sort}>
-        <label>Сортувати за:</label>
+        <label>{t("sortLabel")}</label>
         <select>
-          <option>За популярністю</option>
-          <option>Від дешевих до дорогих</option>
-          <option>Від дорогих до дешевих</option>
-          <option>Новинки</option>
+          {SORT_KEYS.map((key) => (
+            <option key={key} value={key}>
+              {t(`sort.${key}`)}
+            </option>
+          ))}
         </select>
       </div>
     </div>

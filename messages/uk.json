@@ -9,6 +9,10 @@
     "cart": "Кошик",
     "language": "Мова"
   },
+  "pageInDevelopment": {
+    "stillInDevelopment": "Ще в розробці,",
+    "checkBackLater": "повертайтесь пізніше"
+  },
   "home": {
     "hero": {
       "eyebrow": "NEXUS ПК / КОМПОНЕНТИ",
@@ -26,37 +30,87 @@
         "label": "РЕКОМЕНДОВАНО",
         "series": "СЕРІЯ RTX"
       }
+    },
+    "categoryGrid": {
+      "eyebrow": "ОГЛЯД",
+      "title": "Категорії товарів",
+      "viewAll": "Усі товари →",
+      "explore": "Переглянути →",
+      "categories": {
+        "gpu": "Відеокарти",
+        "cpu": "Процесори",
+        "motherboards": "Материнські плати",
+        "ram": "Оперативна пам'ять",
+        "ssd": "Накопичувачі",
+        "psu": "Блоки живлення"
+      }
+    },
+    "featuredProducts": {
+      "eyebrow": "ДОБІРКА",
+      "title": "Популярні товари",
+      "viewAll": "Усі товари →"
+    },
+    "builderBanner": {
+      "eyebrow": "КОНФІГУРАТОР NEXUS PC",
+      "title": {
+        "line1": "Ваша збірка.",
+        "line2": "Наша перевірка сумісності."
+      },
+      "description": "Обирайте комплектуючі, а ми перевіримо сокети, форм-фактори, вимоги до живлення та сумісність перед покупкою.",
+      "cta": "Розпочати збірку →"
+    },
+    "deals": {
+      "eyebrow": "КУПУЙ ВИГІДНО",
+      "title": "Ознайомтеся з комплектуючими",
+      "items": {
+        "gpu": {
+          "category": "ВІДЕОКАРТИ",
+          "title": "Максимум графічної потужності",
+          "description": "Продуктивність нового покоління."
+        },
+        "cpu": {
+          "category": "ПРОЦЕСОРИ",
+          "title": "Додайте потужності збірці",
+          "description": "Високопродуктивні процесори."
+        },
+        "storage": {
+          "category": "НАКОПИЧУВАЧІ",
+          "title": "Більше простору. Більше швидкості.",
+          "description": "Швидкі NVMe-накопичувачі."
+        }
+      }
     }
   },
   "plp": {
     "eyebrow": "КАТАЛОГ",
-    "title": "Компоненти для ПК"
+    "defaultTitle": "Компоненти для ПК",
+    "vendorTitle": "{vendor}",
+    "vendorDescription": "Товари від {vendor}"
   },
   "filters": {
-    "categories": "Категорії",
-    "brand": "Бренд",
-    "price": "Ціна",
-    "from": "Від",
-    "to": "До",
-    "categoryList": [
-      "Усі компоненти",
-      "GPU",
-      "CPU",
-      "Материнські плати",
-      "RAM",
-      "Накопичувачі",
-      "Блоки живлення",
-      "Охолодження"
-    ]
+    "categoriesTitle": "Категорії",
+    "brandTitle": "Бренд",
+    "priceTitle": "Ціна",
+    "priceFrom": "Від",
+    "priceTo": "До",
+    "categories": {
+      "all": "Усі компоненти",
+      "gpu": "GPU",
+      "cpu": "CPU",
+      "motherboards": "Материнські плати",
+      "ram": "RAM",
+      "storage": "Накопичувачі",
+      "psu": "Блоки живлення",
+      "cooling": "Охолодження"
+    }
   },
   "toolbar": {
-    "showing": "Показано",
-    "items": "товарів",
-    "sortBy": "Сортувати за:",
-    "sortOptions": {
-      "popular": "За популярністю",
-      "cheap": "Від дешевих до дорогих",
-      "expensive": "Від дорогих до дешевих",
+    "resultsCount": "Показано {count} товарів",
+    "sortLabel": "Сортувати за:",
+    "sort": {
+      "popularity": "За популярністю",
+      "priceAsc": "Від дешевих до дорогих",
+      "priceDesc": "Від дорогих до дешевих",
       "newest": "Новинки"
     }
   },

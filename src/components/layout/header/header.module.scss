@@ -11,10 +11,14 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
-  height: 70px;
+  height: $header-height;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include smallMobile {
+    padding: 0 20px;
+  }
 }
 
 .logo {
@@ -29,6 +33,10 @@
   display: flex;
   gap: 32px;
 
+  @include smallMobile {
+    display: none;
+  }
+
   a {
     font-size: 13px;
     font-weight: 700;
@@ -38,7 +46,10 @@
     text-decoration: none;
     transition: color 150ms ease;
 
-    &:hover, &.active { color: #fff; }
+    &:hover,
+    &.active {
+      color: #fff;
+    }
   }
 }
 
@@ -59,7 +70,9 @@
   justify-content: center;
   transition: opacity 150ms ease;
 
-  &:hover { opacity: 0.7; }
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .cartBadge {
@@ -76,9 +89,4 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-}
-
-@media (max-width: 600px) {
-  .container { padding: 0 20px; }
-  .navLinks { display: none; }
 }

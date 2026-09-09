@@ -9,6 +9,10 @@
     "cart": "Cart",
     "language": "Language"
   },
+  "pageInDevelopment": {
+    "stillInDevelopment": "Still in development,",
+    "checkBackLater": "check back later"
+  },
   "home": {
     "hero": {
       "eyebrow": "NEXUS PC / COMPONENTS",
@@ -26,38 +30,88 @@
         "label": "FEATURED",
         "series": "RTX SERIES"
       }
+    },
+    "categoryGrid": {
+      "eyebrow": "EXPLORE",
+      "title": "Shop by category",
+      "viewAll": "View all products →",
+      "explore": "Explore →",
+      "categories": {
+        "gpu": "Graphics Cards",
+        "cpu": "Processors",
+        "motherboards": "Motherboards",
+        "ram": "Memory",
+        "ssd": "Storage",
+        "psu": "Power Supplies"
+      }
+    },
+    "featuredProducts": {
+      "eyebrow": "FEATURED",
+      "title": "Featured products",
+      "viewAll": "View all →"
+    },
+    "builderBanner": {
+      "eyebrow": "NEXUS PC BUILDER",
+      "title": {
+        "line1": "Your build.",
+        "line2": "Our compatibility engine."
+      },
+      "description": "Pick your components and we&apos;ll check sockets, form factors, power requirements and compatibility before you buy.",
+      "cta": "Start Building →"
+    },
+    "deals": {
+      "eyebrow": "SHOP SMART",
+      "title": "Explore components",
+      "items": {
+        "gpu": {
+          "category": "GPU",
+          "title": "Upgrade your graphics",
+          "description": "Next-generation performance."
+        },
+        "cpu": {
+          "category": "CPU",
+          "title": "Power your build",
+          "description": "High-performance processors."
+        },
+        "storage": {
+          "category": "STORAGE",
+          "title": "More space. More speed.",
+          "description": "Fast NVMe storage."
+        }
+      }
     }
   },
   "plp": {
     "eyebrow": "CATALOG",
-    "title": "PC Components"
+    "defaultTitle": "PC Components",
+    "vendorTitle": "{vendor}",
+    "vendorDescription": "Products from {vendor}"
   },
   "filters": {
-    "categories": "Categories",
-    "brand": "Brand",
-    "price": "Price",
-    "from": "From",
-    "to": "To",
-    "categoryList": [
-      "All components",
-      "GPU",
-      "CPU",
-      "Motherboards",
-      "RAM",
-      "Storage",
-      "Power Supplies",
-      "Cooling"
-    ]
+    "categoriesTitle": "Categories",
+    "brandTitle": "Brand",
+    "priceTitle": "Price",
+    "priceFrom": "From",
+    "priceTo": "To",
+    "categories": {
+      "all": "All Components",
+      "gpu": "GPU",
+      "cpu": "CPU",
+      "motherboards": "Motherboards",
+      "ram": "RAM",
+      "storage": "Storage",
+      "psu": "Power Supplies",
+      "cooling": "Cooling"
+    }
   },
   "toolbar": {
-    "showing": "Showing",
-    "items": "items",
-    "sortBy": "Sort by:",
-    "sortOptions": {
-      "popular": "Most Popular",
-      "cheap": "Price: Low to High",
-      "expensive": "Price: High to Low",
-      "newest": "Newest Arrivals"
+    "resultsCount": "Showing {count} products",
+    "sortLabel": "Sort by:",
+    "sort": {
+      "popularity": "Popularity",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "newest": "New Arrivals"
     }
   },
   "metadata": {

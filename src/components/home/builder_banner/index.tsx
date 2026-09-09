@@ -1,8 +1,11 @@
 import Link from "next/link";
 
 import styles from "./builder_banner.module.scss";
+import { useTranslations } from "next-intl";
 
 export function BuilderBanner() {
+    const t = useTranslations("home.builderBanner");
+    
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -15,20 +18,19 @@ export function BuilderBanner() {
         </div>
 
         <div className={styles.content}>
-          <span className={styles.eyebrow}>NEXUS PC BUILDER</span>
+          <span className={styles.eyebrow}>{t("eyebrow")}</span>
 
           <h2>
-            Your build.
+            {t("title.line1")}
             <br />
-            <span>Our compatibility engine.</span>
+            <span>{t("title.line2")}</span>
           </h2>
 
           <p>
-            Pick your components and we&apos;ll check sockets, form factors, power
-            requirements and compatibility before you buy.
+            {t("description")}
           </p>
 
-          <Link href="/builder">Start building →</Link>
+          <Link href="/builder">{t("cta")}</Link>
         </div>
       </div>
     </section>

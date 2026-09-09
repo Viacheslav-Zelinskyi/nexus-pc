@@ -34,7 +34,12 @@ export function ProductCard({ product }: ProductCardProps) {
       </Link>
 
       <div className={styles.content}>
-        <span className={styles.category}>{product.category}</span>
+        <Link
+          href={`/products/${product.category}`}
+          className={styles.category}
+        >
+          {product.category}
+        </Link>
 
         <Link href={`/product/${product.handle}`} className={styles.name}>
           {product.name}
