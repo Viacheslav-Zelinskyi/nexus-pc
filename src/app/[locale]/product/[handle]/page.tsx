@@ -14,6 +14,21 @@ import {
 
 import styles from "./product.module.scss";
 
+export const revalidate = 3600;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const products = await getProducts(20);
+  const locales = ["uk", "en"];
+
+  return products.flatMap((product) =>
+    locales.map((locale) => ({
+      locale,
+      handle: product.handle,
+    }))
+  );
+}
+
 export async function generateMetadata({
   params,
 }: {

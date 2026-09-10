@@ -14,6 +14,8 @@ import {
 
 import styles from "./products.module.scss";
 
+export const revalidate = 3600;
+
 export default async function ProductsPage({
   params,
 }: {
