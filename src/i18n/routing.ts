@@ -6,5 +6,5 @@ export type Locales = (typeof locales)[keyof typeof locales];
 
 export const routing = defineRouting({
   locales: Object.values(locales),
-  defaultLocale: locales.uk,
+  defaultLocale: locales.en,
 });

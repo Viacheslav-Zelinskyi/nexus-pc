@@ -11,7 +11,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/header";
 import { MiniCart } from "@/components/layout/mini_cart";
 import { CartProvider } from "@/context/CartContext";
-import { Locales, routing } from "@/i18n/routing";
+import { Locales, locales, routing } from "@/i18n/routing";
 
 import "../globals.scss";
 
@@ -33,9 +33,39 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
   return {
-    title: t("title"),
+    metadataBase: new URL(baseUrl),
+
+    title: {
+      default: t("title"),
+      template: `%s | NEXUS PC`,
+    },
     description: t("description"),
+
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        uk: `/uk`,
+        en: `/en`,
+        "x-default": `/en`,
+      },
+    },
+
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      siteName: "NEXUS PC",
+      locale: locale === locales.uk ? "uk_UA" : "en_US",
+      type: "website",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+    },
   };
 }
 

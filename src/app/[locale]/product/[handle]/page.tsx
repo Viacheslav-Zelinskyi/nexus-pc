@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
@@ -12,6 +13,56 @@ import {
 } from "@/lib/shopify/products";
 
 import styles from "./product.module.scss";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; handle: string }>;
+}): Promise<Metadata> {
+  const { locale, handle } = await params;
+  const product = await getProduct(handle);
+
+  if (!product) {
+    return {
+      title: "Product Not Found",
+    };
+  }
+
+  const title = product.title;
+  const description =
+    product.descriptionHtml
+      ?.replace(/<[^>]*>/g, "")
+      .slice(0, 160)
+      .trim() || undefined;
+
+  const image = product.featuredImage?.url;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/${locale}/product/${handle}`,
+      languages: {
+        uk: `/uk/product/${handle}`,
+        en: `/en/product/${handle}`,
+        "x-default": `/en/product/${handle}`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      images: image
+        ? [{ url: image, alt: product.featuredImage?.altText || title }]
+        : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: image ? [image] : [],
+    },
+  };
+}
 
 export default async function ProductPage({
   params,
